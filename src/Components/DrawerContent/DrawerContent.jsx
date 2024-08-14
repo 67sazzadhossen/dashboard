@@ -1,4 +1,6 @@
 import bell from "../../assets/navlogo/bell.png";
+import completeCourse from "../../assets/navlogo/completeCourse.png";
+import courseProgress from "../../assets/navlogo/courseProgress.png";
 import Card from "../Card";
 
 const DrawerContent = () => {
@@ -31,6 +33,7 @@ const DrawerContent = () => {
 
   return (
     <div>
+      {/* =======Left side ======== */}
       <div className="px-6 py-16">
         <nav className="flex justify-between">
           <h1 className="text-[#4163E9] text-3xl font-medium">Overview</h1>
@@ -68,13 +71,45 @@ const DrawerContent = () => {
         </nav>
       </div>
 
-      <div className="px-6">
+      {/* ======= Right side ====== */}
+      <div className="px-6 flex gap-6">
         <div className="space-y-5">
           {cardData.map((item, idx) => (
             <Card data={item} key={idx}></Card>
           ))}
         </div>
-        <div></div>
+        <div>
+          <div className="flex gap-4">
+            <div className="w-[312px] h-[160px] bg-[#F7F7FF] p-6 rounded-xl relative">
+              <div className="flex justify-between items-center">
+                <div className="text-3xl font-bold">04</div>
+                <button className="btn btn-circle">
+                  <img src={completeCourse} alt="" />
+                </button>
+              </div>
+              <div className="text-lg font-semibold mt-2">
+                Completed <br /> Course
+              </div>
+              <div className="absolute right-4 bottom-6 font-semibold">
+                20% Increase
+              </div>
+            </div>
+            <div className="w-[312px] h-[160px] bg-[#F7F7FF] p-6 rounded-xl relative">
+              <div className="flex justify-between items-center">
+                <div className="text-3xl font-bold">12</div>
+                <button className="btn btn-circle">
+                  <img src={courseProgress} alt="" />
+                </button>
+              </div>
+              <div className="text-lg font-semibold mt-2">
+                Course <br /> In Progress
+              </div>
+              <div className="absolute right-4 bottom-6 font-semibold">
+                1% Decrease
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
