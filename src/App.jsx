@@ -8,15 +8,18 @@ import reports from "../src/assets/navlogo/reports.png";
 import statistics from "../src/assets/navlogo/statistics.png";
 import support from "../src/assets/navlogo/support.png";
 import settings from "../src/assets/navlogo/settings.png";
+
 import NavItem from "./Components/NavItem";
+import DrawerContent from "./Components/DrawerContent/DrawerContent";
 
 function App() {
   return (
     <div className="max-w-[1440px] mx-auto">
       <div className="drawer lg:drawer-open">
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-        <div className="drawer-content flex flex-col items-center justify-center">
-          {/* Page content here */}
+        <div className="drawer-content ">
+          {/* ===== Drawer Content ====== */}
+          <DrawerContent></DrawerContent>
           <label
             htmlFor="my-drawer-2"
             className="btn btn-primary drawer-button lg:hidden"
